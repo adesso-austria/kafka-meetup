@@ -4,7 +4,7 @@
  
  ## How to build
 
-All artifacts are located in /target
+All build artifacts are located in folder **target**
  
  `
  mvn clean install
