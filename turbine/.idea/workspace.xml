@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79fc2b5f-285c-4e0e-8989-03f2b8f9b824" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/CLIArguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/CLIArguments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Turbine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Turbine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/startTurbines.sh" beforeDir="false" afterPath="$PROJECT_DIR$/startTurbines.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +144,8 @@
       <updated>1579605612844</updated>
       <workItem from="1579605615246" duration="12882000" />
       <workItem from="1579635825219" duration="18240000" />
-      <workItem from="1579697424981" duration="811000" />
+      <workItem from="1579697424981" duration="917000" />
+      <workItem from="1579698405483" duration="666000" />
     </task>
     <servers />
   </component>
@@ -215,14 +214,14 @@
     </state>
     <state width="3398" height="472" key="GridCell.Tab.1.right/0.23.1440.845@0.23.1440.845" timestamp="1579635811202" />
     <state width="3396" height="471" key="GridCell.Tab.1.right/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579679677271" />
-    <state x="-2181" y="354" key="SettingsEditor" timestamp="1579697396380">
+    <state x="-2181" y="354" key="SettingsEditor" timestamp="1579699077528">
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>
-    <state x="-2181" y="354" key="SettingsEditor/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579697396380" />
-    <state x="-2074" y="548" key="com.intellij.ide.util.TipDialog" timestamp="1579697518875">
+    <state x="-2181" y="354" key="SettingsEditor/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579699077528" />
+    <state x="-2074" y="548" width="1366" height="658" key="com.intellij.ide.util.TipDialog" timestamp="1579699110894">
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>
-    <state x="-2074" y="548" key="com.intellij.ide.util.TipDialog/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579697518874" />
+    <state x="-2074" y="548" width="1366" height="658" key="com.intellij.ide.util.TipDialog/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579699110894" />
     <state x="-2120" y="617" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579614353749">
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>
@@ -231,5 +230,16 @@
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>
     <state x="-2055" y="340" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579615285255" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/at/adesso/meetup/Turbine.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

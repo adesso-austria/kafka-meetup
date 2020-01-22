@@ -5,10 +5,7 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.text.DecimalFormat;
-import java.util.Properties;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 /**
  * Codified representation of a wind turbine and some of it's sensors
@@ -34,7 +31,7 @@ public class Turbine implements IntTurbine {
 
     public Turbine(String turbineID, String windparkID, String kafka_URL) {
         // set Kafka URL
-        setKafkaURL(kafka_URL);
+        this.setKafkaURL(kafka_URL);
 
         // initialize Kafka producer
         this.setProducer(this.initializeProducer());
@@ -142,7 +139,7 @@ public class Turbine implements IntTurbine {
         this.heartbeat.schedule(new TimerTask() {
             @Override
             public void run() {
-                String currentData = df.format(getTempOutside()) + ";" + df.format(getTempInside())
+                String currentData = new Date().getTime() + ";" + df.format(getTempOutside()) + ";" + df.format(getTempInside())
                         + ";" + hasBats() + ";" + getWindSpeed();
 
                 producer.send(new ProducerRecord<String, String>("turbine-raw", kafka_key, currentData));
