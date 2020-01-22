@@ -55,7 +55,7 @@ public class CLIArguments {
 
     // --- parse command line arguments ---
     public boolean parseArguments(String[] args) {
-        if ( args.length < 6 ) return false;
+        if ( args.length < 8 ) return false;
         Options options = new Options();
 
         Option url = new Option("k", "kafkaURL", true, "kafka url + port");

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79fc2b5f-285c-4e0e-8989-03f2b8f9b824" name="Default Changelist" comment="" />
+    <list default="true" id="79fc2b5f-285c-4e0e-8989-03f2b8f9b824" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/CLIArguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/CLIArguments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Turbine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/adesso/meetup/Turbine.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,13 +32,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1Whd9x9yxobw7ksn4NNpPJyZgPK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -49,6 +58,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -135,12 +145,16 @@
       <option name="presentableId" value="Default" />
       <updated>1579605612844</updated>
       <workItem from="1579605615246" duration="12882000" />
-      <workItem from="1579635825219" duration="17391000" />
+      <workItem from="1579635825219" duration="18240000" />
+      <workItem from="1579697424981" duration="811000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-2120" y="381" width="1347" height="669" key="#Project_Structure" timestamp="1579618839022">
@@ -152,11 +166,11 @@
     </state>
     <state x="369" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.845@0.23.1440.845" timestamp="1579640398421" />
     <state x="-1992" y="361" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579683820702" />
-    <state x="-1907" y="438" key="#com.intellij.ide.util.MemberChooser" timestamp="1579676485288">
+    <state x="-1907" y="438" key="#com.intellij.ide.util.MemberChooser" timestamp="1579697624146">
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>
     <state x="642" y="254" key="#com.intellij.ide.util.MemberChooser/0.23.1440.845@0.23.1440.845" timestamp="1579637355646" />
-    <state x="-1907" y="438" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579676485288" />
+    <state x="-1907" y="438" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579697624146" />
     <state x="-1993" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579618045545">
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>
@@ -201,6 +215,14 @@
     </state>
     <state width="3398" height="472" key="GridCell.Tab.1.right/0.23.1440.845@0.23.1440.845" timestamp="1579635811202" />
     <state width="3396" height="471" key="GridCell.Tab.1.right/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579679677271" />
+    <state x="-2181" y="354" key="SettingsEditor" timestamp="1579697396380">
+      <screen x="-3440" y="23" width="3440" height="1385" />
+    </state>
+    <state x="-2181" y="354" key="SettingsEditor/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579697396380" />
+    <state x="-2074" y="548" key="com.intellij.ide.util.TipDialog" timestamp="1579697518875">
+      <screen x="-3440" y="23" width="3440" height="1385" />
+    </state>
+    <state x="-2074" y="548" key="com.intellij.ide.util.TipDialog/0.23.1440.877/-3440.23.3440.1385@-3440.23.3440.1385" timestamp="1579697518874" />
     <state x="-2120" y="617" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579614353749">
       <screen x="-3440" y="23" width="3440" height="1385" />
     </state>

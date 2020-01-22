@@ -24,8 +24,10 @@ public class Turbine implements IntTurbine {
     private float tempOutside = 10.00F;
     private float tempInside = 55.00F;
     private boolean bats = false;
+    private float windSpeed = 0.00F;
     private Timer timerOutside = new Timer();
     private Timer timerInside = new Timer();
+    private Timer speedTimer = new Timer();
     private Timer batTimer = new Timer();
     private Timer heartbeat = new Timer();
     private KafkaProducer<String, String> producer;
@@ -104,6 +106,18 @@ public class Turbine implements IntTurbine {
         }, 0, 500);
         // --- END: temperature sensors ---
 
+        // --- START: wind-speed sensor ---
+        this.speedTimer.schedule(new TimerTask() {
+            float prevSpeed = 0.0F;
+            @Override
+            public void run() {
+                this.prevSpeed = getWindSpeed();
+                float min = this.prevSpeed - 0.25F, max = this.prevSpeed + 0.25F;
+                setWindSpeed(min + (float)Math.random() * (max - min));
+            }
+        }, 0, 500);
+        // --- END: wind-speed sensor ---
+
         // --- START: bat sensor ---
         this.batTimer.schedule(new TimerTask() {
             @Override
@@ -129,7 +143,7 @@ public class Turbine implements IntTurbine {
             @Override
             public void run() {
                 String currentData = df.format(getTempOutside()) + ";" + df.format(getTempInside())
-                        + ";" + hasBats() + ";" + getLat() + ";" + getLng();
+                        + ";" + hasBats() + ";" + getWindSpeed();
 
                 producer.send(new ProducerRecord<String, String>("turbine-raw", kafka_key, currentData));
             }
@@ -221,5 +235,14 @@ public class Turbine implements IntTurbine {
 
     public void setKafkaURL(String kafkaURL) {
         this.kafkaURL = kafkaURL;
+    }
+
+    public float getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(float windSpeed) {
+        if ( windSpeed >= 0.00F ) this.windSpeed = windSpeed;
+        else this.setWindSpeed(0.00F);
     }
 }

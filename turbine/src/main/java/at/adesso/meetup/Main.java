@@ -23,9 +23,10 @@ public class Main {
 
     // print out help text
     private static void printHelp() {
-        System.out.println("Usage: java -jar Turbine.jar -k KAFKA_URL:PORT -t TOPIC_NAME -m MODE");
+        System.out.println("Usage: java -jar Turbine.jar -k KAFKA_URL:PORT -t TURBINE_ID -w WINDPARK_ID -m MODE");
         System.out.println("\t-k <URL:PORT>\tIP address and port of your Kafka broker");
-        System.out.println("\t-t <TOPIC>\tThe name of the topic");
+        System.out.println("\t-t <TURBINE_ID>\tThe ID of the turbine");
+        System.out.println("\t-t <WINDPARK_ID>\tThe ID of the windpark");
         System.out.println("\t-m <MODE>");
         System.out.println("\t\t0\twill run with no problems");
         System.out.println("\t\t1\twill eventually produce problems");
