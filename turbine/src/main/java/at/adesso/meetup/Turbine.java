@@ -55,10 +55,10 @@ public class Turbine implements IntTurbine {
         props.put("retries", 0);
         props.put("batch.size", 1);
         props.put("linger.ms", 1);
+        props.put("enable.idempotency", true);
         props.put("buffer.memory", 100000);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-
 
         return new KafkaProducer<String, String>(props);
     }
@@ -142,7 +142,7 @@ public class Turbine implements IntTurbine {
                 String currentData = new Date().getTime() + ";" + df.format(getTempOutside()) + ";" + df.format(getTempInside())
                         + ";" + hasBats() + ";" + getWindSpeed();
 
-                producer.send(new ProducerRecord<String, String>("turbine-raw", kafka_key, currentData));
+                producer.send(new ProducerRecord<String, String>("turbine-raw", kafka_key, kafka_key + ";" + currentData));
             }
         }, 500, 1000);
     }
