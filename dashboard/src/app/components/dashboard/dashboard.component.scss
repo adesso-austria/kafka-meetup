@@ -1,0 +1,10 @@
+.turbines {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item {
+    padding: 2em;
+}

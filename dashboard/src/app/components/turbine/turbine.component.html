@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{ turbine.id}}</mat-card-title>
+        <mat-card-subtitle>{{ getTurbineStatus() }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <ul>
+            <li>🌡️ inside: {{ turbine.tempInside }}°C</li>
+            <li>🌡️ outside: {{ turbine.tempOutside }}°C</li>
+            <li>🦇:&nbsp; {{ turbine.bats ? 'yes' : 'no' }}</li>
+            <li>🌪:&nbsp; {{ turbine.windSpeed }} m/s</li>
+        </ul>
+    </mat-card-content>
+</mat-card>

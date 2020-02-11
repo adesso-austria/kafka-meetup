@@ -1,0 +1,13 @@
+<section>
+    <h1>Windpark Dashboard</h1>
+    <hr />
+    <div *ngFor="let windpark of getWinparks() | async">
+        <h2>{{ windpark.id }}</h2>
+        <br>
+        <div class="turbines">
+            <div class="item" *ngFor="let turbine of windpark.turbines">
+                <app-turbine [turbine]="turbine"></app-turbine>
+            </div>
+        </div>
+    </div>
+</section>
