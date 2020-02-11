@@ -5,3 +5,5 @@ target/
 */postgres-data/
 
 */node_modules/
+*/dist
+dist/

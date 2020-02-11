@@ -1,13 +1,42 @@
-version: '3'
+version: '2.1'
 services:
+  web:
+    build: nginx
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_PORT=80
   zookeeper:
     image: wurstmeister/zookeeper
+    healthcheck:
+      test: echo stat | nc localhost 2181
+      interval: 10s
+      timeout: 10s
+      retries: 3
     ports:
       - "2181:2181"
+  api:
+    build: api
+    network_mode: host
+    ports:
+      - "10001:10001"
+    depends_on:
+      kafka:
+        condition: service_healthy
+  enrich:
+    build: enrich
+    network_mode: host
+    ports:
+      - "10000:10000"
+    depends_on:
+      kafka:
+        condition: service_healthy
   kafka:
-    build: .
+    build: kafka
     ports:
       - "9092:9092"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "unset" , "JMX_PORT" ,";" ,"kafka-topics.sh","--zookeeper","zookeeper:2181","--list"]
     environment:
       KAFKA_BROKER_ID: "1"
       KAFKA_HOST: localhost
@@ -19,15 +48,15 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
-      - zookeeper
-  mydb:
-      image: postgres:12.1
+      zookeeper:
+        condition: service_healthy
+  postgres:
+      image: postgres:11.2
       volumes:
         - ./postgres-data:/var/lib/postgresql/data
       environment:
         - POSTGRES_USER=meetup
-        # Provide the password via an environment variable. If the variable is unset or empty, use a default password
         - POSTGRES_PASSWORD=secret
         - POSTGRES_DB=turbines
       ports:
-      - 5432:5432
+        - 5432:5432

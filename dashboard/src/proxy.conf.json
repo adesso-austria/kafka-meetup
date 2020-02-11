@@ -1,6 +1,6 @@
 {
     "/turbines": {
-        "target": "http://localhost:9001/turbines",
+        "target": "http://localhost:10001/turbines",
         "secure": false,
         "logLevel": "debug",
         "pathRewrite": {"^/turbines" : ""}
