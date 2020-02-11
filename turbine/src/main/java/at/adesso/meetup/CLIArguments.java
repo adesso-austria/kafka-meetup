@@ -5,7 +5,6 @@ import org.apache.commons.cli.*;
 public class CLIArguments {
     private String kafkaURL = "";
     private String kafkaPORT = "";
-    private int mode = 0;
     private String windparkID = "";
     private String turbineID = "";
 
@@ -24,14 +23,6 @@ public class CLIArguments {
 
     public String getKafkaURL() {
         return kafkaURL;
-    }
-
-    public void setMode(int mode) {
-        this.mode = mode;
-    }
-
-    public int getMode() {
-        return mode;
     }
 
     public void setWindparkID(String windparkID) {
@@ -55,7 +46,7 @@ public class CLIArguments {
 
     // --- parse command line arguments ---
     public boolean parseArguments(String[] args) {
-        if ( args.length < 8 ) return false;
+        if ( args.length < 6 ) return false;
         Options options = new Options();
 
         Option url = new Option("k", "kafkaURL", true, "kafka url + port");
@@ -70,10 +61,6 @@ public class CLIArguments {
         turbine.setRequired(true);
         options.addOption(turbine);
 
-        Option mode = new Option("m", "mode", true, "topic");
-        mode.setRequired(true);
-        options.addOption(mode);
-
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd;
 
@@ -83,7 +70,6 @@ public class CLIArguments {
             this.setKafkaURL(cmd.getOptionValue("kafkaURL").trim().split(":")[0]);
             this.setKafkaPORT(cmd.getOptionValue("kafkaURL").trim().split(":")[1]);
             this.setWindparkID(cmd.getOptionValue("windparkID").trim());
-            this.setMode(Integer.parseInt(cmd.getOptionValue("mode").trim()));
             this.setTurbineID(cmd.getOptionValue("turbineID").trim());
 
             return true;
