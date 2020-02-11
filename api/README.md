@@ -8,7 +8,7 @@ Port: *9001*
 
 ## How to start
 
-Inside */enrich*:
+Inside */api*:
 
 ```bash
 mvn clean install && mvn sping-boot:run
