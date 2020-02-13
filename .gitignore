@@ -4,6 +4,5 @@ target/
 .DS_Store
 */postgres-data/
 
-*/node_modules/
-*/dist
+node_modules/
 dist/

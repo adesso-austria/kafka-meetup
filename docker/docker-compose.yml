@@ -17,15 +17,23 @@ services:
       - "2181:2181"
   api:
     build: api
-    network_mode: host
     ports:
       - "10001:10001"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres/turbines
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_KAFKA_CONSUMER_BOOTSTRAP_SERVERS: kafka:9092
     depends_on:
       kafka:
         condition: service_healthy
+      postgres:
+        condition: service_healthy
   enrich:
     build: enrich
-    network_mode: host
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_KAFKA_PRODUCER_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_KAFKA_CONSUMER_BOOTSTRAP_SERVERS: kafka:9092
     ports:
       - "10000:10000"
     depends_on:
@@ -39,9 +47,8 @@ services:
       test: ["CMD", "bash", "-c", "unset" , "JMX_PORT" ,";" ,"kafka-topics.sh","--zookeeper","zookeeper:2181","--list"]
     environment:
       KAFKA_BROKER_ID: "1"
-      KAFKA_HOST: localhost
       KAFKA_PORT: 9092
-      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPICS: "turbine-raw:1:1,turbine-agg:1:1"
@@ -54,6 +61,11 @@ services:
       image: postgres:11.2
       volumes:
         - ./postgres-data:/var/lib/postgresql/data
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready"]
+        interval: 30s
+        timeout: 30s
+        retries: 3
       environment:
         - POSTGRES_USER=meetup
         - POSTGRES_PASSWORD=secret
