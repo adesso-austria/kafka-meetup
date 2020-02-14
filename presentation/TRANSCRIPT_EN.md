@@ -22,7 +22,7 @@ Since our producing and consuming systems need to work closely together, we need
 
 There are several possible solutions to this problem, and I will now introduce you to a few of them. Distributed transaction logs, including LRU caches, Bloom filters or the decision of the consumer to read only completed transactions.
 
-In order to create idempotency we can use atomic transactions or perform our operations in a workflow engine. 
+In order to create idempotency we can use atomic transactions or perform our operations in a workflow engine.
 
 A picture is worth a thousand words and for this reason I have prepared a scenario and would like to talk about its architecture.
 
@@ -37,4 +37,3 @@ With this we have finished the theoretical part and I will show you this now wit
 * Q&A session
 
 * Adoption
-

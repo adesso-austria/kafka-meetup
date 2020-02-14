@@ -1,10 +1,9 @@
-import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Windpark } from '../models/windpark';
-import { Turbine, TurbineStatus } from '../models/turbine';
+import { Turbine } from '../models/turbine';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { take, filter, map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { APIResponse } from '../models/api-response';
 
 const API = '/turbines';
