@@ -34,14 +34,14 @@ Java-based CLI tool that generates sensory data & publishes it to the **tubine-r
 Spring Boot application that consumes data from **turbine-raw**, lables it & publishes the data to
 the **turbine-agg** topic.
 
-Port: *9000*
+Port: *10000*
 
 ### API & Load Microservice
 
 Spring Boot application that consumes data from the **turbine-agg** topic and loads it to a postrges-database.
 Implements a REST-endpoint */turbines* from which data can be requested.
 
-Port: *9001*
+Port: *10001*
 
 ### Docker
 
